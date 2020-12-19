@@ -1,0 +1,23 @@
+const path = require('path')
+const express = require('express')
+const hbs = require('hbs')
+const methodOverride = require('method-override')
+const cookieParser = require('cookie-parser')
+const app = express()
+const port = process.env.PORT || 3000
+app.set('view engine', 'hbs')
+const userRouter = require('./routes/users')
+const placeRouter = require('./routes/places')
+app.use(express.static(path.join(__dirname, './public')))
+hbs.registerPartials(path.join(__dirname, './views/partials'))
+require('./db/mongoose')
+app.use(express.urlencoded({ extended: false }))
+app.use(methodOverride('_method'))
+app.use(cookieParser())
+app.use('/users', userRouter)
+app.use('/places', placeRouter)
+app.get('/', (req, res) => {
+    res.render('main/landing')
+})
+
+app.listen(port, console.log('app is running successfully ' + port))

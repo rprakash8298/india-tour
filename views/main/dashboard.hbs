@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>dashboard</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col d-flex justify-content-end mt-4">
+            <a href="/users/profile/{{id}}"
+                class="btn btn-primary rounded-pill mx-2">user</a>
+
+            <a href="/places/formUpload"
+                class="btn btn-primary rounded-pill ">Upload
+                Places</a>
+        </div>
+        <div class="row ">
+            <div class="col ">
+                <div class="row mt-1">
+                    <div class="col">
+                        <h5
+                            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                            India Tourism Places</h5>
+                        <div
+                            class="title-underline bg-secondary">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5 ">
+                    {{#allplace}}
+
+                    <div class="card mb-3 mx-auto"
+                        style="max-width: 700px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="{{images}}"
+                                    class="card-img"
+                                    width="220px"
+                                    height="200px">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body ">
+                                    <h3
+                                        class="card-title text-capitalize">
+                                        {{title}}</h3>
+                                    <div
+                                        class="title-underline bg-secondary">
+                                    </div>
+                                    <h5
+                                        class="card-title mt-1">
+                                        {{postedBy}}</h5>
+                                    <p class="card-text">
+                                        {{description}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{/allplace}}
+                </div>
+
+            </div>
+            {{!-- for users info --}}
+
+        </div>
+    </div>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>place Page</title>
+</head>
+
+<body>
+    <div class="container ">
+        <div class="card card-body m-auto mt-5 "
+            style="width: 40rem; border-radius: 20px;">
+            <h2 class="text-center"
+                style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                Places</h2>
+            <form action="/places/data"
+                enctype="multipart/form-data" method="POST">
+
+                <div class="form-group">
+                    <label for="postedBy">Name</label>
+                    <input type="text" name="postedBy"
+                        id="postedBy" class="form-control"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="images">Image</label>
+                    <input type="file" name="images"
+                        id="images" accept="image/*"
+                        class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="title"
+                        id="title" class="form-control"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label
+                        for="description">Description</label>
+                    <textarea name="description"
+                        id="description"
+                        class="form-control"
+                        required>{{Places.description}}</textarea>
+                </div>
+
+                <a href="/users/dashboard"
+                    class="btn btn-secondary rounded-pill mt-4">Cancel</a>
+                <button type="submit"
+                    class="btn btn-danger rounded-pill mt-4">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
